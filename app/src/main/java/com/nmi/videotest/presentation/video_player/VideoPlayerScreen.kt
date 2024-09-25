@@ -107,8 +107,8 @@ fun VideoPlayerScreen(
                 verticalArrangement = Arrangement.SpaceBetween,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                if (!isInternetAvailable(context) || state.errorMessage.isNotBlank()){
-                    ErrorContainer(state.errorMessage.ifBlank{"No internet connection"})
+                if (!isInternetAvailable(context)){
+                    ErrorContainer("No internet connection")
                 }
                 else if (state.isLoading && state.errorMessage.isBlank()) {
                     CircularProgressIndicator()
