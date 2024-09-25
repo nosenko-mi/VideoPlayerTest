@@ -51,7 +51,7 @@ val appModule = module {
         PexelVideoRepository(remoteDatasource = get(), localDatasource = get())
     }
 
-    single<Player> { // looks suspicious, however I'm not sure how to do it better.
+    factory<Player> {
         ExoPlayer.Builder(androidApplication().applicationContext)
             .build()
     }
