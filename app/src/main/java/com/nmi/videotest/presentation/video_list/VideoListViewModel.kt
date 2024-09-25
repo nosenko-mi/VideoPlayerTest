@@ -24,7 +24,9 @@ class VideoListViewModel(
 
     fun onAction(action: VideoListAction) {
         when (action) {
-            is VideoListAction.Example -> {}
+            is VideoListAction.Reload -> {
+                loadVideos()
+            }
             else -> {}
         }
     }
